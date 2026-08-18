@@ -19,15 +19,15 @@ T1110 — Brute Force
 
 ## Detection Logic
 
-[Explain what your Splunk search does here.]
+[Explain what Splunk search does here.]
 
 ## Splunk Query
 
-[Your actual working query goes here.]
+[ actual working query goes here.]
 
 ## Evidence
 
-![Failed Login](../screenshots/windows-event-4625.png)
+![Failed Login](../screenshots/4625.png)
 
 ## Investigation
 
