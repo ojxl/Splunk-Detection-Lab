@@ -31,7 +31,7 @@ T1046 — Network Service Scanning
 
 ![Nessus Scan](../screenshots/nessus.png)
 
-![Wireshark Traffic](screenshots/wireshark.png)
+![Wireshark Traffic](..screenshots/wireshark.png)
 
 ![Splunk Detection](../screenshots/splunk.png)
 
