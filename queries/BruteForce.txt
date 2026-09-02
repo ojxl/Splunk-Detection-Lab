@@ -1,1 +1,6 @@
-
+index=main sourcetype=WinEventLog:Security EventCode=4625
+| rex field=_raw "Account Name:\s+(?<account>\S+)"
+| rex field=_raw "Source Network Address:\s+(?<src_ip>\S+)"
+| rex field=_raw "Failure Reason:\s+(?<reason>.+)"
+| stats count by account, src_ip, reason
+| sort - count
