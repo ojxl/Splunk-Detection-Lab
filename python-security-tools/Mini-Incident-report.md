@@ -7,6 +7,7 @@
 **Status:** Investigating  
 **Detection Source:** Windows Security Event Logs  
 **Event ID:** 4625 – Failed Logon  
+**MITRE ATT&CK ID:** T1110 - Brute Force
 
 A number of failed login attempts were detected against a Windows system.
 The activity was identified using a Python log parser.
