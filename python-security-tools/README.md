@@ -23,3 +23,4 @@ Input:
 Output:
 
 FAILED LOGIN: 4625 Failed Login from 192.168.1.34
+![Failed Login Detection](../screenshots/image.png)
