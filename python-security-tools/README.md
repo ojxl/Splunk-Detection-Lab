@@ -5,7 +5,7 @@ A collection of beginner cybersecurity tools written in Python.
 ## Log Parser
 
 A simple Python script that reads a log file and identifies failed
-Windows login events using Event ID 4625.
+Windows login events using Event ID 4625. Also flags potential brute force if number of failed login attempts is 3 or more. 
 
 ## What It Does
 
