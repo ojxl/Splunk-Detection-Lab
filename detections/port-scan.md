@@ -3,15 +3,15 @@
 
 ## Objective
 
-Detect potential network/port scanning activity.
+Detect potential network/port scanning activity agaisnt windows. 
 
 ## Attack Simulation
 
-Nmap was executed from Kali Linux against the Windows VM.
+Nmap was executed from Kali Linux against the Windows VM. The scan generated network traffic that was observed using Wireshark and corresponding telemetry was examined in Splunk
 
 ## Network Evidence
 
-Wireshark was used to observe SYN traffic generated during scanning.
+As mentioned before, Wireshark was used to observe SYN traffic generated during scanning.
 
 ## MITRE ATT&CK
 
@@ -19,7 +19,7 @@ T1046 — Network Service Scanning
 
 ## Detection Logic
 
-[Explain detection.]
+The detection looks for repeated network connection attempts from a source IP to multiple destination ports on my Windows VM. A high number of connection attempts across different ports within a short period can indicate network scanning activity.
 
 ## Splunk Query
 
@@ -37,4 +37,4 @@ T1046 — Network Service Scanning
 
 ## Investigation
 
-[What would an analyst investigate?]
+The detection looks for repeated network connection attempts from a source IP to multiple destination ports on the Windows VM. A high number of connection attempts across different ports within a short period can indicate network scanning activity.
