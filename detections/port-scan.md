@@ -40,4 +40,16 @@ index=main sourcetype=firewall
 
 ## Investigation
 
-The detection looks for repeated network connection attempts from a source IP to multiple destination ports on the Windows VM. A high number of connection attempts across different ports within a short period can indicate network scanning activity.
+## Investigation
+
+If this detection triggered in a real environment, an analyst would investigate:
+
+1. **Source IP** — Identify the system generating the connection attempts.
+2. **Target IP** — Confirm which system was being scanned.
+3. **Destination ports** — Examine which ports were targeted and how many different ports were contacted.
+4. **Timing and frequency** — Determine whether the connection attempts occurred within a short period, which may indicate scanning activity.
+5. **Authorised activity** — Check whether the source system is an approved vulnerability scanner or security-testing system.
+6. **Related activity** — Review other network and endpoint events from the source to determine whether scanning was followed by connection attempts or other suspicious activity.
+7. **Network evidence** — Use Wireshark or other network telemetry to validate the observed scanning behaviour.
+
+In this lab, the scanning activity was intentionally generated from the Kali Linux VM using Nmap against the Windows VM.
