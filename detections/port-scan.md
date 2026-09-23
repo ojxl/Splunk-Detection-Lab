@@ -23,7 +23,10 @@ The detection looks for repeated network connection attempts from a source IP to
 
 ## Splunk Query
 
-[Actual working query.]
+index=main sourcetype=firewall
+| rex field=_raw "^\S+\s+\S+\s+(?<action>\S+)\s+(?<protocol>\S+)\s+(?<src_ip>\S+)\s+(?<dst_ip>\S+)\s+(?<src_port>\S+)\s+(?<dst_port>\S+)"
+| stats count by src_ip, dst_ip, dst_port
+| sort - count
 
 ## Evidence
 
