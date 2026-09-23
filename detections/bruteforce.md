@@ -35,4 +35,13 @@ index=* EventCode=4625
 
 ## Investigation
 
-[Explain what an analyst would investigate if the detection triggered.]
+If this detection triggered in a real environment, an analyst would investigate:
+
+Target account — Identify which account received the failed login attempts.
+Number of attempts — Determine how many failed logons occurred and whether they were repeated.
+Time of activity — Check when the attempts occurred and whether they happened within a short period.
+Source information — Identify the computer or IP address responsible for the attempts, where available.
+Successful logons — Check for successful Event ID 4624 logons around the same time to determine whether an account was eventually accessed.
+Related activity — Review other Windows Security and Sysmon events from the same source or around the same time for additional suspicious activity.
+
+In this lab, the failed logons were intentionally generated as part of the controlled brute-force simulation.
