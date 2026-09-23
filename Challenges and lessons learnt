@@ -1,1 +1,44 @@
+## Challenges & Lessons Learned
+
+Building this lab involved several challenges that helped me understand the practical difficulties involved in setting up a small SOC environment.
+
+### 1. Splunk Log Ingestion and Configuration
+
+One of the biggest challenges was getting Windows, Sysmon, and firewall logs into Splunk consistently. It was not always immediately obvious whether an issue was caused by the Windows logging configuration, the Splunk input, the sourcetype, or the search itself.
+
+Working through these issues helped me understand that effective SIEM monitoring depends not only on writing searches, but also on making sure the underlying logs are being collected and parsed correctly.
+
+**Lesson learned:** Before troubleshooting a detection query, verify that the expected events are actually reaching the SIEM and understand what the raw event looks like.
+
+### 2. Working with Regex for Log Parsing
+
+Some of the firewall logs were not already separated into the fields I needed for analysis. I therefore had to use regex to extract information such as the action, protocol, source IP, destination IP, source port and destination port.
+
+Regex was not an area I had much experience with before this project, so this was one of the more challenging parts of the lab.
+
+Rather than treating the regex as something I simply copied into the project, I used it to understand how raw log data can be converted into searchable fields.
+
+**Lesson learned:** Detection engineering often involves working with imperfect or unstructured data, and understanding basic parsing techniques is important when working with SIEM platforms.
+
+### 3. Understanding Why a Detection Query Works
+
+Another challenge was moving beyond simply getting a query to return results. I had to understand what the query was actually looking for and how the results related to the simulated attack.
+
+For example, during the port scanning investigation, I compared activity generated from Kali with the firewall and network logs being collected by the Windows system.
+
+**Lesson learned:** A useful detection is not just a working query. I need to understand the behaviour being detected, the evidence supporting it, and why the results could be considered suspicious.
+
+### 4. Troubleshooting Through Multiple Data Sources
+
+During the lab I did not always see the expected information in one source immediately. This encouraged me to compare information across Splunk, Windows Event Viewer, Sysmon, Windows Firewall logs and Wireshark.
+
+This was particularly useful when investigating network scanning activity, as I could generate activity from Kali and observe the resulting network traffic and endpoint logging.
+
+**Lesson learned:** SOC investigations often require correlating evidence from multiple sources rather than relying on a single log or tool.
+
+### Overall Reflection
+
+The biggest lesson from this project was that building a SOC environment is different from simply learning individual tools. There were several points where the technical problem was not immediately obvious, and I had to investigate the data, test configurations and troubleshoot the pipeline before continuing.
+
+This project improved my understanding of SIEM log ingestion, Windows and Sysmon telemetry, basic detection engineering, network traffic analysis and the investigative process behind a SOC alert and taught me loads of patience and troubleshooting.
 
