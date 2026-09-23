@@ -26,7 +26,8 @@ The detection searches Windows Security logs for Event ID 4625, which represents
 
 ## Splunk Query
 
-[ actual working query goes here.]
+index=* EventCode=4625
+| stats count by Account_Name
 
 ## Evidence
 
